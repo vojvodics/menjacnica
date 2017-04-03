@@ -30,8 +30,6 @@ public class Valuta {
 		this.kurs = kurs;
 	}
 
-	
-
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
