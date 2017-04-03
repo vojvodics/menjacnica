@@ -11,6 +11,8 @@ public class Kurs {
 	}
 
 	public void setProdajni(double prodajni) {
+		if (prodajni < 0)
+			throw new RuntimeException("Kurs ne moze biti manji od nule");
 		this.prodajni = prodajni;
 	}
 
@@ -19,6 +21,8 @@ public class Kurs {
 	}
 
 	public void setSrednji(double srednji) {
+		if (srednji < 0)
+			throw new RuntimeException("Kurs ne moze biti manji od nule");
 		this.srednji = srednji;
 	}
 
@@ -27,6 +31,8 @@ public class Kurs {
 	}
 
 	public void setKupovni(double kupovni) {
+		if (kupovni < 0)
+			throw new RuntimeException("Kurs ne moze biti manji od nule");
 		this.kupovni = kupovni;
 	}
 

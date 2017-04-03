@@ -11,6 +11,8 @@ public class Menjacnica {
 	}
 
 	public void setValute(List<Valuta> valute) {
+		if (valute == null)
+			throw new RuntimeException("Valute ne smeju biti null");
 		this.valute = valute;
 	}
 

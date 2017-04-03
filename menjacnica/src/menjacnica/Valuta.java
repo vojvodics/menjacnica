@@ -7,14 +7,16 @@ public class Valuta {
 
 	private GregorianCalendar datum;
 	private Kurs kurs;
-	// kljuc je kratak naziv, vrednost je dug naziv
-	private HashMap<String, String> naziv;
+	private String skraceniNaziv;
+	private String naziv;
 
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 
 	public void setDatum(GregorianCalendar datum) {
+		if (datum == null)
+			throw new RuntimeException("Datum ne sme biti null");
 		this.datum = datum;
 	}
 
@@ -23,14 +25,30 @@ public class Valuta {
 	}
 
 	public void setKurs(Kurs kurs) {
+		if (kurs == null)
+			throw new RuntimeException("Kurs ne sme biti null");
 		this.kurs = kurs;
 	}
 
-	public HashMap<String, String> getNaziv() {
+	
+
+	public String getSkraceniNaziv() {
+		return skraceniNaziv;
+	}
+
+	public void setSkraceniNaziv(String skraceniNaziv) {
+		if (naziv == null || naziv.equals(""))
+			throw new RuntimeException("Naziv ne sme biti null ili prazan string");
+		this.skraceniNaziv = skraceniNaziv;
+	}
+
+	public String getNaziv() {
 		return naziv;
 	}
 
-	public void setNaziv(HashMap<String, String> naziv) {
+	public void setNaziv(String naziv) {
+		if (naziv == null || naziv.equals(""))
+			throw new RuntimeException("Naziv ne sme biti null ili prazan string");
 		this.naziv = naziv;
 	}
 
